@@ -102,12 +102,12 @@
 <meta property="og:image" content="http://yoursite.com/2019/05/25/Bugku%20-%20Web/7.png">
 <meta property="og:image" content="http://yoursite.com/2019/05/25/Bugku%20-%20Web/8.png">
 <meta property="og:image" content="http://yoursite.com/2019/05/25/Bugku%20-%20Web/web8.png">
-<meta property="og:image" content="http://yoursite.com/2019/05/25/Bugku%20-%20Web/web8(2">
+<meta property="og:image" content="http://yoursite.com/2019/05/25/Bugku%20-%20Web/web8-2.png">
 <meta property="og:image" content="http://yoursite.com/2019/05/25/Bugku%20-%20Web/9.png">
 <meta property="og:image" content="http://yoursite.com/2019/05/25/Bugku%20-%20Web/10.png">
 <meta property="og:image" content="http://yoursite.com/2019/05/25/Bugku%20-%20Web/11.png">
 <meta property="og:image" content="http://yoursite.com/2019/05/25/Bugku%20-%20Web/12.png">
-<meta property="og:updated_time" content="2019-05-28T12:26:41.088Z">
+<meta property="og:updated_time" content="2019-05-28T12:31:02.147Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bugku - Web">
 <meta name="twitter:description" content="Bugku的一些Web题一直没怎么整理，就统一在这篇文章中梳理一下吧。文章持续更新">
@@ -446,14 +446,14 @@
 <hr>
 <h2 id="各种绕过"><a href="#各种绕过" class="headerlink" title="各种绕过"></a>各种绕过</h2><p>· <strong>sha()函数比较绕过</strong><br><img src="8.png" alt><br>关键点;<strong>sha1()函数无法处理数组类型，将报错并返回false</strong></p>
 <h2 id="web8"><a href="#web8" class="headerlink" title="web8"></a>web8</h2><p>· <strong>代码审计</strong><br>提示：txt????<br><img src="web8.png" alt><br><strong>思路一：</strong><br>    想得到flag，要满足三个条件<br>    · ac的值不为空<br>    · f的值从文件fn中获得<br>    · ac 恒等于 f<br>    Payload： <code>?ac=123&amp;fn=php://input [post] 123</code></p>
-<p><strong>思路二：</strong><br>    根据提示的txt，访问一下flag.txt，发现<br>    <img src="web8(2" alt>.png)</p>
+<p><strong>思路二：</strong><br>    根据提示的txt，访问一下flag.txt，发现<br><img src="web8-2.png" alt></p>
 <pre><code>$ac是指flag.txt中的内容flags，$fn指的是flag.txt这个文件
 Payload：?ac=flags&amp;fn=flag.txt
 </code></pre><blockquote>
 <p>file_get_contents() 函数把整个文件读入一个字符串中。</p>
 </blockquote>
-<h2 id="细心"><a href="#细心" class="headerlink" title="细心"></a>细心</h2><p>· <strong>御剑 robots.txt</strong><br>这道题打开后没有什么特别的发现<br><img src="9.png" alt><br>用御剑扫了一下，扫到了robots.txt<br>访问一下<br><img src="10.png" alt><br>得到了这个resusl.php<br><img src="11.png" alt><br>根据提示，GET一个x=admin<br><img src="12.png" alt></p>
-<h2 id="以上内容整理于2019-5-28"><a href="#以上内容整理于2019-5-28" class="headerlink" title="以上内容整理于2019/5/28"></a><em>以上内容整理于2019/5/28</em></h2>
+<h2 id="细心"><a href="#细心" class="headerlink" title="细心"></a>细心</h2><p>· <strong>御剑 robots.txt</strong><br>这道题打开后没有什么特别的发现<br><img src="9.png" alt><br>用御剑扫了一下，扫到了robots.txt<br>访问一下<br><img src="10.png" alt><br>得到了这个resusl.php<br><img src="11.png" alt><br>根据提示，GET一个x=admin</p>
+<h2 id><a href="#" class="headerlink" title></a><img src="12.png" alt></h2><h2 id="以上内容整理于2019-5-28"><a href="#以上内容整理于2019-5-28" class="headerlink" title="以上内容整理于2019/5/28"></a><em>以上内容整理于2019/5/28</em></h2>
       
     </div>
     
@@ -581,7 +581,7 @@ Payload：?ac=flags&amp;fn=flag.txt
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -652,7 +652,7 @@ Payload：?ac=flags&amp;fn=flag.txt
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#login1-SKCTF"><span class="nav-number">1.</span> <span class="nav-text">login1(SKCTF)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#你从哪里来"><span class="nav-number">2.</span> <span class="nav-text">你从哪里来</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#md5-collision-NUPT-CTF"><span class="nav-number">3.</span> <span class="nav-text">md5 collision(NUPT_CTF)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#各种绕过"><span class="nav-number">4.</span> <span class="nav-text">各种绕过</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web8"><span class="nav-number">5.</span> <span class="nav-text">web8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#细心"><span class="nav-number">6.</span> <span class="nav-text">细心</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#以上内容整理于2019-5-28"><span class="nav-number">7.</span> <span class="nav-text">以上内容整理于2019/5/28</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#login1-SKCTF"><span class="nav-number">1.</span> <span class="nav-text">login1(SKCTF)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#你从哪里来"><span class="nav-number">2.</span> <span class="nav-text">你从哪里来</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#md5-collision-NUPT-CTF"><span class="nav-number">3.</span> <span class="nav-text">md5 collision(NUPT_CTF)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#各种绕过"><span class="nav-number">4.</span> <span class="nav-text">各种绕过</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web8"><span class="nav-number">5.</span> <span class="nav-text">web8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#细心"><span class="nav-number">6.</span> <span class="nav-text">细心</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">7.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#以上内容整理于2019-5-28"><span class="nav-number">8.</span> <span class="nav-text">以上内容整理于2019/5/28</span></a></li></ol></div>
             
 
           </div>
