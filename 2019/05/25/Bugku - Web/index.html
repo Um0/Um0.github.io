@@ -107,7 +107,11 @@
 <meta property="og:image" content="http://yoursite.com/2019/05/25/Bugku%20-%20Web/10.png">
 <meta property="og:image" content="http://yoursite.com/2019/05/25/Bugku%20-%20Web/11.png">
 <meta property="og:image" content="http://yoursite.com/2019/05/25/Bugku%20-%20Web/12.png">
-<meta property="og:updated_time" content="2019-05-29T11:56:14.551Z">
+<meta property="og:image" content="http://yoursite.com/2019/05/25/Bugku%20-%20Web/13.png">
+<meta property="og:image" content="http://yoursite.com/2019/05/25/Bugku%20-%20Web/14.png">
+<meta property="og:image" content="http://yoursite.com/2019/05/25/Bugku%20-%20Web/15.png">
+<meta property="og:image" content="http://yoursite.com/2019/05/25/Bugku%20-%20Web/16.png">
+<meta property="og:updated_time" content="2019-05-29T12:35:15.305Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bugku - Web">
 <meta name="twitter:description" content="Bugku的一些Web题一直没怎么整理，就统一在这篇文章中梳理一下吧。文章持续更新">
@@ -455,6 +459,9 @@ Payload：?ac=flags&amp;fn=flag.txt
 <h2 id="细心"><a href="#细心" class="headerlink" title="细心"></a>细心</h2><p>· <strong>御剑 robots.txt</strong><br>这道题打开后没有什么特别的发现<br><img src="9.png" alt><br>用御剑扫了一下，扫到了robots.txt<br>访问一下<br><img src="10.png" alt><br>得到了这个resusl.php<br><img src="11.png" alt><br>根据提示，GET一个x=admin<br><img src="12.png" alt></p>
 <p><em>以上内容整理于2019/5/28</em></p>
 <hr>
+<h2 id="求getshell"><a href="#求getshell" class="headerlink" title="求getshell"></a>求getshell</h2><p><img src="13.png" alt><br>我随便找了一张图片传了上去<br><img src="14.png" alt><br>上传成功，然并卵<br>随后我上传了一个PHP文件，并用BP抓包<br><img src="15.png" alt><br>想都不用想，肯定会报错的</p>
+<p>这道题应用了walf严格匹配，对文件类型和后缀的检测<br>在BP中需要修改content-type字段以及文件的后缀<br><img src="16.png" alt><br>walf如果是严格匹配，那么大小写可能会让walf失效，然而服务器的容错率高所以服务器正常解析<br>后缀名修改为php2, php3, php4, php5, phps, pht, phtm, phtml（php的别名），发现只有php5没有被过滤</p>
+<p>## </p>
 
       
     </div>
@@ -654,7 +661,7 @@ Payload：?ac=flags&amp;fn=flag.txt
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#login1-SKCTF"><span class="nav-number">1.</span> <span class="nav-text">login1(SKCTF)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#你从哪里来"><span class="nav-number">2.</span> <span class="nav-text">你从哪里来</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#md5-collision-NUPT-CTF"><span class="nav-number">3.</span> <span class="nav-text">md5 collision(NUPT_CTF)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#各种绕过"><span class="nav-number">4.</span> <span class="nav-text">各种绕过</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web8"><span class="nav-number">5.</span> <span class="nav-text">web8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#细心"><span class="nav-number">6.</span> <span class="nav-text">细心</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#login1-SKCTF"><span class="nav-number">1.</span> <span class="nav-text">login1(SKCTF)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#你从哪里来"><span class="nav-number">2.</span> <span class="nav-text">你从哪里来</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#md5-collision-NUPT-CTF"><span class="nav-number">3.</span> <span class="nav-text">md5 collision(NUPT_CTF)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#各种绕过"><span class="nav-number">4.</span> <span class="nav-text">各种绕过</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web8"><span class="nav-number">5.</span> <span class="nav-text">web8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#细心"><span class="nav-number">6.</span> <span class="nav-text">细心</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#求getshell"><span class="nav-number">7.</span> <span class="nav-text">求getshell</span></a></li></ol></div>
             
 
           </div>
@@ -687,7 +694,7 @@ Payload：?ac=flags&amp;fn=flag.txt
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共4.4k字</span>
+  <span class="post-count">博客全站共4.5k字</span>
 </div>
 
 
