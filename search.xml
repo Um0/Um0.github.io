@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[XSS学习及某XSS挑战赛的笔记]]></title>
+    <url>%2F2019%2F05%2F29%2FXSS%E5%AD%A6%E4%B9%A0%E5%8F%8A%E6%9F%90XSS%E6%8C%91%E6%88%98%E8%B5%9B%E7%9A%84%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[PHP-判断变量是否为空的四种姿势]]></title>
     <url>%2F2019%2F05%2F28%2FPHP-%E5%88%A4%E6%96%AD%E5%8F%98%E9%87%8F%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E7%9A%84%E5%9B%9B%E7%A7%8D%E5%A7%BF%E5%8A%BF%2F</url>
-    <content type="text"><![CDATA[在做CTF中一些PHP代码审计题目时，常常会遇到判断变量是否为空的情况。根据CSDN上的一篇文章学习了一下 1.四种函数· if(isset($test)) true：变量已被赋值/设置· if(!empty($test)) true：变量不为空· if(!is_null($test)) true：变量不为空· if($test) true：以自身为参数，变量不为空为了方便起见，empty与is_null均取反值，使这四个函数都为ture时，变量不为空 ① isset()、!empty()会首先检查变量是否存在（存在返回true），然后再对变量值进行检测； is_null()、以自身为参数，直接检查变量值是否为null，如果变量未定义会出现错误警告。 ② isset()、!empty()的输入参数必须是一个变量（$变量），因为它们是语言结构，不是函数，无法被变量函数调用； is_null()、以自身为参数，输入参数只要是能够有返回值的就可以（常量、变量、表达式等都可以）； ③判断为空的时刻： Ⅰ isset()：仅当 未定义 或者 值为null 时，返回false； Ⅱ !empty()：未定义、 NULL、 “”(空字符)、0、“0”、FALSE、array()，均返回false; Ⅲ !is_null()：直接判断是否不为null，只有为null才返回false；未定义会出现错误警告； Ⅳ 以自身为参数：未定义、 NULL、 “”(空字符)、0、“0”、FALSE、array()，均返回false；变量未定义时出现错误警告； 2.（具体实验过程请参考原文）从上表可知： ① 对于值为null和未定义的变量，四种方式都能返回false 其中，!is_null()和“以自身为参数”对于未定义的变量还会出现Notice直接报错；② !empty()和“以自身为参数” 还会对“”、array()、0、“0”、false，均返回false；③ 而isset()和!is_null()只对null和未定义变量做出false判断； 3.isset()、!empty()的输入参数必须是一个变量1234$test=100;echo isset($test),'&lt;br/&gt;';echo !empty($test),'&lt;br/&gt;';echo !is_null($test),!is_null(100),!is_null($test=100),'&lt;br/&gt;'; 只有!is_null()，可以直接写!is_null(100),!is_null($b=100)； 而isset()和!empty()这样写会报错，输入参数只能写入一个变量（$变量） 因为isset()和!empty()是语言结构，is_null()是一个函数； 参考文章]]></content>
+    <content type="text"><![CDATA[在做CTF中一些PHP代码审计题目时，常常会遇到判断变量是否为空的情况。根据CSDN上的一篇文章学习了一下 1.四种函数· if(isset($test)) true：变量已被赋值/设置· if(!empty($test)) true：变量不为空· if(!is_null($test)) true：变量不为空· if($test) true：以自身为参数，变量不为空为了方便起见，empty与is_null均取反值，使这四个函数都为ture时，变量不为空 ① isset()、!empty()会首先检查变量是否存在（存在返回true），然后再对变量值进行检测； is_null()、以自身为参数，直接检查变量值是否为null，如果变量未定义会出现错误警告。 ② isset()、!empty()的输入参数必须是一个变量（$变量），因为它们是语言结构，不是函数，无法被变量函数调用； is_null()、以自身为参数，输入参数只要是能够有返回值的就可以（常量、变量、表达式等都可以）； ③判断为空的时刻： Ⅰ isset()：仅当 未定义 或者 值为null 时，返回false； Ⅱ !empty()：未定义、 NULL、 “”(空字符)、0、“0”、FALSE、array()，均返回false; Ⅲ !is_null()：直接判断是否不为null，只有为null才返回false；未定义会出现错误警告； Ⅳ 以自身为参数：未定义、 NULL、 “”(空字符)、0、“0”、FALSE、array()，均返回false；变量未定义时出现错误警告； 2.（具体实验过程请参考原文）从上表可知： ① 对于值为null和未定义的变量，四种方式都能返回false 其中，!is_null()和“以自身为参数”对于未定义的变量还会出现Notice直接报错；② !empty()和“以自身为参数” 还会对“”、array()、0、“0”、false，均返回false；③ 而isset()和!is_null()只对null和未定义变量做出false判断； 3.isset()、!empty()的输入参数必须是一个变量1234$test=100;echo isset($test),'&lt;br/&gt;';echo !empty($test),'&lt;br/&gt;';echo !is_null($test),!is_null(100),!is_null($test=100),'&lt;br/&gt;'; 只有!is_null()，可以直接写!is_null(100),!is_null($b=100)； 而isset()和!empty()这样写会报错，输入参数只能写入一个变量（$变量） 因为isset()和!empty()是语言结构，is_null()是一个函数； 4. 参考文章]]></content>
       <categories>
         <category>笔记</category>
         <category>CTF</category>

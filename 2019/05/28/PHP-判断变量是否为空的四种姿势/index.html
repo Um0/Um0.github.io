@@ -95,7 +95,8 @@
 <meta property="og:description" content="在做CTF中一些PHP代码审计题目时，常常会遇到判断变量是否为空的情况。根据CSDN上的一篇文章学习了一下">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/05/28/PHP-判断变量是否为空的四种姿势/1.png">
-<meta property="og:updated_time" content="2019-05-29T11:40:10.927Z">
+<meta property="og:image" content="http://yoursite.com/2019/05/28/PHP-判断变量是否为空的四种姿势/2.png">
+<meta property="og:updated_time" content="2019-05-29T11:56:15.905Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP-判断变量是否为空的四种姿势">
 <meta name="twitter:description" content="在做CTF中一些PHP代码审计题目时，常常会遇到判断变量是否为空的情况。根据CSDN上的一篇文章学习了一下">
@@ -419,7 +420,7 @@
       
 
       
-        <p>在做CTF中一些PHP代码审计题目时，常常会遇到判断变量是否为空的情况。根据CSDN上的一篇文章学习了一下</p>
+        <p><center>在做CTF中一些PHP代码审计题目时，常常会遇到判断变量是否为空的情况。根据CSDN上的一篇文章学习了一下</center></p>
 <a id="more"></a>
 <hr>
 <p><strong>1.</strong>四种函数<br>· if(isset($test)) true：变量已被赋值/设置<br>· if(!empty($test)) true：变量不为空<br>· if(!is_null($test)) true：变量不为空<br>· if($test) true：以自身为参数，变量不为空<br><em>为了方便起见，empty与is_null均取反值，使这四个函数都为ture时，变量不为空</em></p>
@@ -432,8 +433,8 @@
 <p>只有!is_null()，可以直接写!is_null(100),!is_null($b=100)；</p>
 <p>而isset()和!empty()这样写会报错，输入参数只能写入一个变量（$变量）</p>
 <p>因为isset()和!empty()是语言结构，is_null()是一个函数；</p>
-<hr>
-<p><a href="https://blog.csdn.net/sinat_18308267/article/details/50469309#commentBox" target="_blank" rel="noopener">参考文章</a></p>
+<p><strong>4.</strong></p>
+<h2 id><a href="#" class="headerlink" title></a><img src="2.png" alt></h2><p><a href="https://blog.csdn.net/sinat_18308267/article/details/50469309#commentBox" target="_blank" rel="noopener">参考文章</a></p>
 
       
     </div>
@@ -477,6 +478,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/29/XSS学习及某XSS挑战赛的笔记/" rel="prev" title="XSS学习及某XSS挑战赛的笔记">
+                XSS学习及某XSS挑战赛的笔记 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -531,8 +536,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -549,7 +563,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -611,6 +625,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text"></span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -637,7 +667,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共4.3k字</span>
+  <span class="post-count">博客全站共4.4k字</span>
 </div>
 
 
