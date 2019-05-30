@@ -96,7 +96,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/05/28/PHP-判断变量是否为空的四种姿势/1.png">
 <meta property="og:image" content="http://yoursite.com/2019/05/28/PHP-判断变量是否为空的四种姿势/2.png">
-<meta property="og:updated_time" content="2019-05-29T11:56:15.905Z">
+<meta property="og:updated_time" content="2019-05-30T11:27:56.532Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP-判断变量是否为空的四种姿势">
 <meta name="twitter:description" content="在做CTF中一些PHP代码审计题目时，常常会遇到判断变量是否为空的情况。根据CSDN上的一篇文章学习了一下">
@@ -357,8 +357,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">笔记</span>
+                  <a href="/categories/CTF/" itemprop="url" rel="index">
+                    <span itemprop="name">CTF</span>
                   </a>
                 </span>
 
@@ -368,8 +368,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/笔记/CTF/" itemprop="url" rel="index">
-                    <span itemprop="name">CTF</span>
+                  <a href="/categories/CTF/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
                   </a>
                 </span>
 
@@ -423,17 +423,17 @@
         <p><center>在做CTF中一些PHP代码审计题目时，常常会遇到判断变量是否为空的情况。根据CSDN上的一篇文章学习了一下</center></p>
 <a id="more"></a>
 <hr>
-<p><strong>1.</strong>四种函数<br>· if(isset($test)) true：变量已被赋值/设置<br>· if(!empty($test)) true：变量不为空<br>· if(!is_null($test)) true：变量不为空<br>· if($test) true：以自身为参数，变量不为空<br><em>为了方便起见，empty与is_null均取反值，使这四个函数都为ture时，变量不为空</em></p>
+<p><strong>1.四种函数</strong><br>· if(isset($test)) true：变量已被赋值/设置<br>· if(!empty($test)) true：变量不为空<br>· if(!is_null($test)) true：变量不为空<br>· if($test) true：以自身为参数，变量不为空<br><em>为了方便起见，empty与is_null均取反值，使这四个函数都为ture时，变量不为空</em></p>
 <p>① isset()、!empty()会首先检查变量是否存在（存在返回true），然后再对变量值进行检测；<br>  is_null()、以自身为参数，直接检查变量值是否为null，如果变量未定义会出现错误警告。</p>
 <p>② isset()、!empty()的输入参数必须是一个变量（$变量），因为它们是语言结构，不是函数，无法被变量函数调用；<br>  is_null()、以自身为参数，输入参数只要是能够有返回值的就可以（常量、变量、表达式等都可以）；</p>
 <p>③判断为空的时刻：<br>  Ⅰ isset()：仅当 未定义 或者 值为null 时，返回false；<br>  Ⅱ !empty()：未定义、 NULL、 “”(空字符)、0、“0”、FALSE、array()，均返回false;<br>  Ⅲ !is_null()：直接判断是否不为null，只有为null才返回false；未定义会出现错误警告；<br>  Ⅳ 以自身为参数：未定义、 NULL、 “”(空字符)、0、“0”、FALSE、array()，均返回false；变量未定义时出现错误警告；</p>
-<p><strong>2.</strong><br><img src="1.png" alt><br><em>（具体实验过程请参考原文）</em><br>从上表可知：</p>
+<p><strong>2.测试</strong><br><img src="1.png" alt><br><em>（具体实验过程请参考原文）</em><br>从上表可知：</p>
 <p>① 对于值为null和未定义的变量，四种方式都能返回false<br>  其中，!is_null()和“以自身为参数”对于未定义的变量还会出现Notice直接报错；<br>② !empty()和“以自身为参数” 还会对“”、array()、0、“0”、false，均返回false；<br>③ 而isset()和!is_null()只对null和未定义变量做出false判断；</p>
-<p><strong>3.</strong><br>isset()、!empty()的输入参数必须是一个变量<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$test=<span class="number">100</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="keyword">isset</span>($test),<span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line"><span class="keyword">echo</span> !<span class="keyword">empty</span>($test),<span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line"><span class="keyword">echo</span> !is_null($test),!is_null(<span class="number">100</span>),!is_null($test=<span class="number">100</span>),<span class="string">'&lt;br/&gt;'</span>;</span><br></pre></td></tr></table></figure></p>
+<p><strong>3.注意</strong><br>isset()、!empty()的输入参数必须是一个变量<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$test=<span class="number">100</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="keyword">isset</span>($test),<span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line"><span class="keyword">echo</span> !<span class="keyword">empty</span>($test),<span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line"><span class="keyword">echo</span> !is_null($test),!is_null(<span class="number">100</span>),!is_null($test=<span class="number">100</span>),<span class="string">'&lt;br/&gt;'</span>;</span><br></pre></td></tr></table></figure></p>
 <p>只有!is_null()，可以直接写!is_null(100),!is_null($b=100)；</p>
 <p>而isset()和!empty()这样写会报错，输入参数只能写入一个变量（$变量）</p>
 <p>因为isset()和!empty()是语言结构，is_null()是一个函数；</p>
-<p><strong>4.</strong></p>
+<p><strong>4.附</strong></p>
 <h2 id><a href="#" class="headerlink" title></a><img src="2.png" alt></h2><p><a href="https://blog.csdn.net/sinat_18308267/article/details/50469309#commentBox" target="_blank" rel="noopener">参考文章</a></p>
 
       
