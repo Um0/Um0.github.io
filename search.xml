@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CTF中的文件包含]]></title>
+    <url>%2F2019%2F05%2F31%2FCTF%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%2F</url>
+    <content type="text"><![CDATA[文件包含在CTF的WEB题中非常常见。由于对这方面知识较为欠缺，特意学习了一下 一道简单的题目首先，我们借助BUGKU的一道题来简单了解一下 题目名称：flag在index里题目链接：http://123.206.87.240:8005/post/ 打开链接点击一下http://123.206.87.240:8005/post/index.php?file=show.php发现有一个 file 参数，我们发现这个参数可以包含.php文件，再根据题目名称，flag在index.php里所以我们就可以用php协议来获取index.php的源码 file传值为php://filter/read=convert.base64-encode/resource=index.php 结果为一串Base64，解一下就能得到flag了 简要分析那我们该如何理解上述代码呢？ 简而言之，他的意思就是 以Base64的形式读取index.php的内容 我们首先要读取一个文件，就要使用php://filter/read=，然后目标是index.php，resource=index.php，这样进行读取，但是又因为是php文件，如果直接访问就会运行，所以使用base64读取，就会返回编码，无法执行。 内容补充· 关于php://filter协议：这种协议在存在文件包含漏洞时使用，当我们读取php文件时，在页面中无法显示，所以我们将php文件以特定的编码输出，之后再解码，就能得到php源文件了。· 在这个文件包含的点使用 php 协议就可以读取任何文件源码，类似地还有 data 协议，file 协议。WEB协议还有很多，应用也很广泛。]]></content>
+      <categories>
+        <category>CTF</category>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>CTF</tag>
+        <tag>Web</tag>
+        <tag>文件包含</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[XSS学习及某XSS挑战赛的笔记]]></title>
     <url>%2F2019%2F05%2F29%2FXSS%E5%AD%A6%E4%B9%A0%E5%8F%8A%E6%9F%90XSS%E6%8C%91%E6%88%98%E8%B5%9B%E7%9A%84%E7%AC%94%E8%AE%B0%2F</url>
     <content type="text"></content>
