@@ -1,0 +1,5 @@
+http://um0.github.io/2019/06/16/PHP代码审计的一些简单问题/
+http://um0.github.io/2019/05/31/CTF中的文件包含/
+http://um0.github.io/2019/05/29/XSS学习及某XSS挑战赛的笔记/
+http://um0.github.io/2019/05/28/PHP-判断变量是否为空的四种姿势/
+http://um0.github.io/2019/05/27/ISCC2019-杂项/
