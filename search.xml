@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[写于2020年初春]]></title>
+    <url>%2F2020%2F03%2F08%2F%E5%86%99%E4%BA%8E2020%E5%B9%B4%E5%88%9D%E6%98%A5%2F</url>
+    <content type="text"><![CDATA[谁也没有想到，2020年会如此不平凡 一直想再写一篇博客，但总是没抽出时间。今天刚听完一堂关于考研的讲座，刚整理完学校布置的作业，就来随便写写吧。 现在虽然还未开学，但早就算是进入大三下学期了。大三以来，一直计划着考研的相关事项，没有往网络安全、CTF这方面投入过多的精力。距离我写上一篇文章也已经过去了好久。心里挺不是滋味，好像又半途而废了一样，但是没有办法，既然决定考研，就全力去准备。 又让我想起了大二刚开始学CTF一样的时候，就是纯粹的热爱，纯粹的喜欢，爱琢磨，喜欢新奇的东西。反而并没有过多功利的想法，没有想着去打比赛、非要获个什么什么奖之类的。我感觉求知的乐趣永远是在于不断探求的过程，以及接触到新鲜事物的喜悦。 我还是依然热爱着网络安全，热爱着CTF。不如现在就立一个Flag，从考上研的那一刻，一直到研究生毕业的夏天，再努力完成三件事：学好CTF、通过司法考试、健身。 再说回2020年新年，实在不太平。疫情还没有得到控制的时候，又突然传来科比去世的消息。 悲痛。 痛我国险于危机之秋，痛我科意外离世… 好在春天已经来到，万象更新，未来可期。前路还有太多的未知，愿我能足够强大“洗尽铅华 祈求涅槃” 用我最喜欢的一张图片，来作为此文的结尾。希望考研结束的那一天，我能像科比一样，放肆地张开双臂，拥抱成功]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>杂记</tag>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[CTF中的代码审计]]></title>
     <url>%2F2019%2F06%2F16%2FCTF%E4%B8%AD%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%2F</url>
     <content type="text"><![CDATA[代码审计总是看不懂，决定从Bugku中的代码审计题入手 extract变量覆盖题目连接 http://123.206.87.240:9009/1.php题目描述12345678910111213141516&lt;?php$flag='xxx';extract($_GET);if(isset($shiyan))&#123;$content=trim(file_get_contents($flag));if($shiyan==$content)&#123;echo'flag&#123;xxx&#125;';&#125;else&#123;echo'Oh.no';&#125;&#125;?&gt; 解法看到了一句话感觉说的很对：代码审计，最重要的就是看变量，关注这个变量的处理过程那么这道题关键的变量就是 $shiyan 和 $flag ，二者相等，即得flag extract() 函数使用数组键名作为变量名，使用数组键值作为变量值。针对数组中的每个元素，将在当前符号表中创建对应的一个变量。 题目使用了extract($_GET)接收了GET请求中的数据，并将键名和键值转换为变量名和变量的值。如果新的变量和已有变量重名，会将已有变量替换。所以可以使用GET提交参数和值，利用extract()对变量进行覆盖，从而满足各个条件。 所以GET请求 ?flag=&amp;shiyan=extract()函数会将 $flag 和 $shiyan 的值覆盖了，将变量的值设置为空或者不存在的文件，就满足 $shiyan==$content Payload： http://123.206.87.240:9009/1.php?flag=&amp;shiyan= strcmp比较字符串题目链接 http://123.206.87.240:9009/6.php题目描述12345678910&lt;?php$flag = "flag&#123;xxxxx&#125;";if (isset($_GET['a'])) &#123;if (strcmp($_GET['a'], $flag) == 0) //如果 str1 小于 str2 返回 &lt; 0； 如果 str1大于 str2返回 &gt; 0；如果两者相等，返回 0。//比较两个字符串（区分大小写）die('Flag: '.$flag);elseprint 'No';&#125;?&gt; 解法]]></content>
@@ -29,11 +41,6 @@
         <tag>文件包含</tag>
         <tag>笔记</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[XSS学习及某XSS挑战赛的笔记]]></title>
-    <url>%2F2019%2F05%2F29%2FXSS%E5%AD%A6%E4%B9%A0%E5%8F%8A%E6%9F%90XSS%E6%8C%91%E6%88%98%E8%B5%9B%E7%9A%84%E7%AC%94%E8%AE%B0%2F</url>
-    <content type="text"></content>
   </entry>
   <entry>
     <title><![CDATA[PHP-判断变量是否为空的四种姿势]]></title>

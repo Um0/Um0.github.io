@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://um0.github.io/2020/03/08/%E5%86%99%E4%BA%8E2020%E5%B9%B4%E5%88%9D%E6%98%A5/</loc>
+    
+    <lastmod>2020-03-08T10:49:41.410Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://um0.github.io/2019/06/16/CTF%E4%B8%AD%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/</loc>
     
     <lastmod>2019-06-29T01:06:37.573Z</lastmod>
@@ -54,13 +61,6 @@
     <loc>http://um0.github.io/2019/04/15/%E5%86%99%E4%BA%8E%E5%8C%97%E4%BA%AC%E2%80%9C%E4%B8%80%E5%B8%A6%E4%B8%80%E8%B7%AF%E2%80%9D%E5%AE%89%E4%BF%9D%E5%89%8D/</loc>
     
     <lastmod>2019-05-29T11:59:08.382Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://um0.github.io/2019/05/29/XSS%E5%AD%A6%E4%B9%A0%E5%8F%8A%E6%9F%90XSS%E6%8C%91%E6%88%98%E8%B5%9B%E7%9A%84%E7%AC%94%E8%AE%B0/</loc>
-    
-    <lastmod>2019-05-29T11:48:25.986Z</lastmod>
     
   </url>
   
